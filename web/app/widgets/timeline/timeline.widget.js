@@ -51,24 +51,11 @@
                 .width(0)
                 .tickFormat({
                     format: d3.time.format("%H:%M"),
-                    //tickTime: d3.time.hours,
-                    //tickInterval: 1,
                     tickSize: 6
                 })
                 .showTimeAxisTick()
                 .stack()
                 .margin({left:scope.margin_left + 20, right:22, top:0, bottom:0})
-                //.tickFormat( //
-                    //{//format: d3.time.format("%I %p"),
-                        //tickTime: d3.time.months,
-                        //tickInterval: 2,
-                //    })
-                // .click(function (d, i, datum) {
-                //     alert(datum.label);
-                // })
-                // .scroll(function (x, scale) {
-                //     $("#scrolled_date").text(scale.invert(x) + " to " + scale.invert(x+width));
-                // });
                 .mouseover(function (d, i, datum) {
                     scope.$apply(function () {
                         scope.item = datum.label;
@@ -118,8 +105,6 @@
             var metrics = context.measureText(text);
             return metrics.width;
         }
-
-        console.log(getTextWidth("hello there!", "bold 12pt arial"));  // close to 86
         
 
         var partitionData = function (raw) {
@@ -250,8 +235,8 @@
                 { state: '1', color: '#FFCCCC' },
                 { state: '2', color: '#FF9999' },
                 { state: '3', color: '#FF6666' },
-                { state: '4', color: '#FF3333' },
-                { state: '5', color: '#FF0000' }
+                { state: '4', color: '#CC0000' },
+                { state: '5', color: '#993333' }
             ],
             series: widget.series || []
         };
